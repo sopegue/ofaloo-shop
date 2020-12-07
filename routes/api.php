@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\CreateFavorite;
+use App\Http\Controllers\GetAllFavorites;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('createfavorite', CreateFavorite::class);
+Route::get('getallfavorites', GetAllFavorites::class);

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Favorite;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response; 
 
 class GetAllFavorites extends Controller
 {
@@ -14,6 +16,6 @@ class GetAllFavorites extends Controller
      */
     public function __invoke(Request $request)
     {
-        //
+        return response(Favorite::all(), Response::HTTP_OK);
     }
 }
