@@ -1,6 +1,11 @@
 <?php
 use App\Http\Controllers\CreateFavorite;
+use App\Http\Controllers\CreateEvaluation;
+use App\Http\Controllers\CreateQuestion;
 use App\Http\Controllers\GetAllFavorites;
+use App\Http\Controllers\GetAllEvaluations;
+use App\Http\Controllers\GetAllAnswers;
+use App\Http\Controllers\GetAllQuestions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +25,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::post('createfavorite', CreateFavorite::class);
 Route::get('getallfavorites', GetAllFavorites::class);
+
+Route::post('createevaluation', CreateEvaluation::class);
+Route::get('getallevaluations', GetAllEvaluations::class);
+
+Route::post('createquestion', CreateQuestion::class);
+Route::get('getallquestions', GetAllQuestions::class);
