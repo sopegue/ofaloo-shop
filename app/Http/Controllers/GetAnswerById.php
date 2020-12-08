@@ -16,6 +16,6 @@ class GetAnswerById extends Controller
      */
     public function __invoke(Request $request)
     {
-        return response(Answer::where('question',$request->id), Response::HTTP_OK);
+        return response(Answer::where('question',$request->id)->get(), Response::HTTP_OK);
     }
 }
