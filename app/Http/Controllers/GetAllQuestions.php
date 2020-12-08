@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Question;
-use Illuminate\Http\Request;
+use App\Models\Answer;
 use Illuminate\Http\Response;
+use Illuminate\Http\Request;
 
 class GetAllQuestions extends Controller
 {
@@ -16,6 +17,13 @@ class GetAllQuestions extends Controller
      */
     public function __invoke(Request $request)
     {
-        return response(Question::all(), Response::HTTP_OK);
+        $ques = Question::all();
+        if($ques) {
+            foreach ($ques as $question) {
+                $ans = Answer::where('question',$question->id)->first();
+                $question["ans"]= $ans;
+            }
+        }
+        return  response($ques, Response::HTTP_OK);
     }
 }
