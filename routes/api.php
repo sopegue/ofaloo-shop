@@ -8,7 +8,7 @@ use App\Http\Controllers\GetAllQuestions;
 use App\Http\Controllers\GetAnswerById;
 use App\Http\Controllers\GetEvaluationById;
 use App\Http\Controllers\GetFavoriteById;
-use App\Http\Controllers\DelfavoriteById;
+use App\Http\Controllers\DelFavoriteById;
 use App\Http\Controllers\GetQuestionById;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
