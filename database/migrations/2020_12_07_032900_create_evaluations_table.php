@@ -17,6 +17,7 @@ class CreateEvaluationsTable extends Migration
             $table->id();
             $table->bigInteger('user');
             $table->string('user_name');
+            $table->boolean('buyer');
             $table->bigInteger('product');
             $table->bigInteger('rate');
             $table->string('comment');

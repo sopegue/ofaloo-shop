@@ -21,6 +21,7 @@ class CreateEvaluation extends Controller
         $eva->user = $request->user;
         $eva->user_name = $request->user_name;
         $eva->product = $request->product;
+        $eva->buyer = $request->buyer;
         $eva->rate = $request->rate;
         $eva->comment = $request->comment;
         $eva ->save();
