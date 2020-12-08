@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Favorite;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response; 
 
-class GetAllFavorites extends Controller
+class GetFavoriteByUser extends Controller
 {
     /**
      * Handle the incoming request.
@@ -16,6 +14,6 @@ class GetAllFavorites extends Controller
      */
     public function __invoke(Request $request)
     {
-        return response(Favorite::where('user', $request->user)->get(), Response::HTTP_OK);
+        //
     }
 }
