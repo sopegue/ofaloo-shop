@@ -5,6 +5,7 @@ use App\Http\Controllers\CreateQuestion;
 use App\Http\Controllers\GetAllFavorites;
 use App\Http\Controllers\GetAllEvaluations;
 use App\Http\Controllers\GetAllAnswers;
+use App\Http\Controllers\GetAnswerById;
 use App\Http\Controllers\GetAllQuestions;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -31,3 +32,5 @@ Route::get('getallevaluations', GetAllEvaluations::class);
 
 Route::post('createquestion', CreateQuestion::class);
 Route::get('getallquestions', GetAllQuestions::class);
+
+Route::post('getanswerbyid', GetAnswerById::class);
