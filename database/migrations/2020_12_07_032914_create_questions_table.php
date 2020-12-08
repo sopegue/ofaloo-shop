@@ -16,6 +16,7 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user');
+            $table->string('user_name');
             $table->bigInteger('product');
             $table->string('question');
             $table->timestamps();

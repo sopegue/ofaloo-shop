@@ -19,6 +19,7 @@ class CreateQuestion extends Controller
         $ques = new Question();
         $ques->user = $request->user;
         $ques->product = $request->product;
+        $ques->user_name = $request->user_name;
         $ques->question = $request->question;
         $ques->save();
         return  response($ques, Response::HTTP_OK);

@@ -19,6 +19,7 @@ class CreateEvaluation extends Controller
     {
         $eva = new Evaluation();
         $eva->user = $request->user;
+        $eva->user_name = $request->user_name;
         $eva->product = $request->product;
         $eva->rate = $request->rate;
         $eva->comment = $request->comment;

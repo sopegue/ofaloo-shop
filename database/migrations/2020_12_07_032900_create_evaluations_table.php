@@ -16,6 +16,7 @@ class CreateEvaluationsTable extends Migration
         Schema::create('evaluations', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user');
+            $table->string('user_name');
             $table->bigInteger('product');
             $table->bigInteger('rate');
             $table->string('comment');
