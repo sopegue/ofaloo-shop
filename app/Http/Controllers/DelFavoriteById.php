@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Favorite;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class DelFavoriteById extends Controller
 {
@@ -14,6 +16,8 @@ class DelFavoriteById extends Controller
      */
     public function __invoke(Request $request)
     {
-        //
+        $fav = Favorite::where(['user' => $request->user, 'product' =>$request->product])->first();
+        Favorite::destroy($fav->id);
+        return response(null, Response::HTTP_OK);
     }
 }
