@@ -16,6 +16,6 @@ class GetAllFavorites extends Controller
      */
     public function __invoke(Request $request)
     {
-        return response(Favorite::all(), Response::HTTP_OK);
+        return response(Favorite::where('user', $request->user), Response::HTTP_OK);
     }
 }

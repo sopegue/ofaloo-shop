@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Favorite;
 use Illuminate\Http\Request;
-
+use Illuminate\Http\Response;
 class GetFavoriteById extends Controller
 {
     /**
@@ -14,6 +15,7 @@ class GetFavoriteById extends Controller
      */
     public function __invoke(Request $request)
     {
-        //
+        $fav = Favorite::where(['user' => $request->user, 'product' =>$request->product])->first();
+        return response($fav, Response::HTTP_OK);
     }
 }
