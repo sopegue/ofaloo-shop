@@ -8,6 +8,7 @@ use App\Http\Controllers\GetAllQuestions;
 use App\Http\Controllers\GetAnswerById;
 use App\Http\Controllers\GetEvaluationById;
 use App\Http\Controllers\GetFavoriteById;
+use App\Http\Controllers\CountFavoritesByUser;
 use App\Http\Controllers\DelFavoriteById;
 use App\Http\Controllers\GetQuestionById;
 use Illuminate\Http\Request;
@@ -31,6 +32,7 @@ Route::post('createfavorite', CreateFavorite::class);
 Route::post('getallfavorites', GetAllFavorites::class);
 Route::post('getfavoritebyid', GetFavoriteById::class);
 Route::post('delfavoritebyid', DelFavoriteById::class);
+Route::post('countfavoritebyuser', CountFavoritesByUser::class);
 
 Route::post('createevaluation', CreateEvaluation::class);
 Route::get('getallevaluations', GetAllEvaluations::class);
