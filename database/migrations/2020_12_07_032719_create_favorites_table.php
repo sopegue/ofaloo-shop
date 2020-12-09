@@ -17,6 +17,12 @@ class CreateFavoritesTable extends Migration
             $table->id();
             $table->bigInteger('user');
             $table->bigInteger('product');
+
+            $table->string('image');
+            $table->string('title');
+            $table->float('price', 8, 2);
+            $table->float('price_saleoff', 8, 2);
+            $table->string('link');
             $table->timestamps();
         });
     }
