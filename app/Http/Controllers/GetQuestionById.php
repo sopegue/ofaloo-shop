@@ -17,9 +17,13 @@ class GetQuestionById extends Controller
      */
     public function __invoke(Request $request)
     {
-        $ques = Question::find($request->id);
-        $ans = Answer::where('question',$request->id)->first();
-        $ques["ans"]= $ans;
+        $ques = Answer::where('product',$request->id)->get();
+        if($ques) {
+            foreach ($ques as $question) {
+                $ans = Answer::where('question',$question->id)->first();
+                $question["ans"]= $ans;
+            }
+        }
         return  response($ques, Response::HTTP_OK);
     }
 }
