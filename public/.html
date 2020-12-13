@@ -1,47 +1,9 @@
-<div
-    style="margin-top: 1rem !important"
-    class="wishes-items flex w-full flex-column-512"
->
-    <div class="w-item-img w-20percent">
-        <img
-            src="'+ fav.image +'"
-            alt=""
-        />
-    </div>
-    <div class="w-item-inf w-80percent">
-        <span class="block bold pb-05">'+ fav.title +'</span>
-        <p class="grid-link__title grid-link__vendor">
-            <span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star color-6d6d6d"></span>
-                <span class="fa fa-star color-6d6d6d"></span>
-            </span>
-            <span class="pp-block color-6d6d6d"> 145 evaluations </span>
-        </p>
-        <div class="flex align-center">
-            <span class="block color-008489 size-16">'+ fav.price +'</span>
-            '+ setReduction(fav.price_saleoff) +'
-        </div>
-        <div
-            style="margin-top: 1rem !important"
-            class="flex justify-between align-center flex-column-512"
-        >
-            <a class="remove-full clickable hover-underline hover-color-008489"
-                >Remove from list of wishes</a
-            >
-            <button
-                type="submit"
-                name="add"
-                id="AddToCart"
-                class="btn btn--wide btn--secondary"
-            >
-                <span id="AddToCartText">Add to Cart</span>
-            </button>
-            <a class="remove-min clickable hover-underline hover-color-008489"
-                >Remove from list of wishes</a
-            >
-        </div>
-    </div>
-</div>
+<span style="margin-left: 0.2rem !important" class="color-008489 size-14"
+    >You save
+    <strong>
+        {{ product.compare_at_price_max | minus:product.price |
+        difference:product.compare_at_price_max | money }} ({{
+        product.compare_at_price_max | minus:product.price | times:100 |
+        divided_by:product.compare_at_price_max }}%)
+    </strong>
+</span>
